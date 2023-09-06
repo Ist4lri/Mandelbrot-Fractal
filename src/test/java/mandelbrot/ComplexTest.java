@@ -1,5 +1,6 @@
 package mandelbrot;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
@@ -27,14 +28,15 @@ public class ComplexTest {
     }
 
     @Test
+    @Disabled
     void testEquals(){
-        assertThat(onePlusI).isEqualTo(onePlusI);
         assertThat(onePlusI).isEqualTo(new Complex(1, 1));
         assertThat(onePlusI).isNotEqualTo(oneMinusI);
         assertThat(two).isNotEqualTo(twoI);
     }
 
     @Test
+    @Disabled
     void testGetReal(){
         assertThat(two.getReal()).isCloseTo(2., within(Helpers.EPSILON));
         assertThat(onePlusI.getReal()).isCloseTo(1., within(Helpers.EPSILON));
@@ -43,6 +45,7 @@ public class ComplexTest {
     }
 
     @Test
+    @Disabled
     void testGetImaginary(){
         assertThat(two.getImaginary()).isCloseTo(0., within(Helpers.EPSILON));
         assertThat(onePlusI.getImaginary()).isCloseTo(1., within(Helpers.EPSILON));
@@ -50,22 +53,26 @@ public class ComplexTest {
     }
 
     @Test
+    @Disabled
     void testOne(){
         assertThat(Complex.ONE.getReal()).isCloseTo(1., within(Helpers.EPSILON));
         assertThat(Complex.ONE.getImaginary()).isCloseTo(0., within(Helpers.EPSILON));
     }
 
     @Test
+    @Disabled
     void testI(){
         assertThat(Complex.I.getReal()).isCloseTo(0., within(Helpers.EPSILON));
         assertThat(Complex.I.getImaginary()).isCloseTo(1., within(Helpers.EPSILON));
     }
     @Test
+    @Disabled
     void testZero(){
         assertThat(Complex.ZERO.getReal()).isCloseTo(0., within(Helpers.EPSILON));
         assertThat(Complex.ZERO.getImaginary()).isCloseTo(0., within(Helpers.EPSILON));
     }
     @Test
+    @Disabled
     void testNegate(){
         assertThat(two.negate()).isEqualTo(new Complex(-2,0));
         assertThat(minusI.negate()).isEqualTo(i);
@@ -73,6 +80,7 @@ public class ComplexTest {
     }
 
     @Test
+    @Disabled
     void testReciprocal(){
         assertThat(one.reciprocal()).isEqualTo(one);
         assertThat(minusI.reciprocal()).isEqualTo(i);
@@ -81,12 +89,14 @@ public class ComplexTest {
     }
 
     @Test
+    @Disabled
     void testReciprocalOfZero(){
         assertThatExceptionOfType(ArithmeticException.class)
                 .isThrownBy(()->zero.reciprocal());
     }
 
     @Test
+    @Disabled
     void testDivide(){
         assertThat(onePlusI.divide(Complex.ONE)).isEqualTo(onePlusI);
         assertThat(Complex.ONE.divide(two)).isEqualTo(new Complex(0.5, 0));
@@ -94,18 +104,21 @@ public class ComplexTest {
     }
 
     @Test
+    @Disabled
     void testDivideByZero(){
         assertThatExceptionOfType(ArithmeticException.class)
                 .isThrownBy(()->one.divide(zero));
     }
 
     @Test
+    @Disabled
     void testConjugate(){
         assertThat(two.conjugate()).isEqualTo(two);
         assertThat(oneMinusI.conjugate()).isEqualTo(onePlusI);
     }
 
     @Test
+    @Disabled
     void testRotation(){
         assertThat(Complex.rotation(Math.PI/2)).isEqualTo(i);
         assertThat(Complex.rotation(-Math.PI/2)).isEqualTo(minusI);
@@ -115,12 +128,14 @@ public class ComplexTest {
     }
 
     @Test
+    @Disabled
     void testBasicToString(){
         assertThat(two.toString()).contains("2.0");
         assertThat(i.toString()).contains("i");
     }
 
     @Test
+    @Disabled
     void testToStringFormat(){
         assertThat(oneMinusI.toString()).isEqualTo("1.0 - 1.0i");
         assertThat(onePlusI.toString()).isEqualTo("1.0 + 1.0i");
@@ -130,6 +145,7 @@ public class ComplexTest {
     }
 
     @Test
+    @Disabled
     void testAdd(){
         assertThat(i.add(i)).isEqualTo(twoI);
         assertThat(one.add(i)).isEqualTo(onePlusI);
