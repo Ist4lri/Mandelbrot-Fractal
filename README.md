@@ -7,4 +7,4 @@ Le but du TP sera de corriger le code de la classe `Complex` en s'aidant de test
 
 ## Membre du projet
 
-- NOM, prénom
+- GOUTTEBEL Pierre-Loïc
