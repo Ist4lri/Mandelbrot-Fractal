@@ -139,7 +139,8 @@ public class Complex {
      * @return the complex number {@code this * factor}
      */
     public Complex multiply(Complex factor) {
-        return new Complex(this.real * factor.real, this.imaginary * factor.imaginary);
+        return new Complex((this.real * factor.real) - (this.imaginary * factor.imaginary),
+                (this.real * factor.imaginary) + (this.imaginary * factor.real));
     }
 
     /**

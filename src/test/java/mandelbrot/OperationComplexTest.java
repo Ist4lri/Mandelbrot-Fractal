@@ -54,10 +54,10 @@ public class OperationComplexTest {
 
     @Test
     void testMultiply() {
-        assertThat(onePlusI.multiply(two)).isEqualTo(new Complex(2, 0));
+        assertThat(onePlusI.multiply(two)).isEqualTo(new Complex(2, 2));
         assertThat(oneMinusI.multiply(onePlusI)).isNotEqualTo(onePlusI);
         assertThat(oneMinusI.multiply(oneMinusI)).isNotEqualTo(oneMinusI);
-        assertThat(two.multiply(twoI)).isEqualTo(new Complex(0, 0));
+        assertThat(two.multiply(twoI)).isEqualTo(new Complex(0, 4));
     }
 
     @Test
